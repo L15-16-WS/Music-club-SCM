@@ -23,3 +23,17 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     };
+    scrollToSection('scroll-to-join', 'join');
+    scrollToSection('scroll-to-events', 'events-upcoming');
+
+    // Smooth scroll for anchor links in the page
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
